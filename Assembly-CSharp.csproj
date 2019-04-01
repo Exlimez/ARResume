@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{92E450CF-F1E8-8D67-D6D8-B7ECAA5863CF}</ProjectGuid>
+    <ProjectGuid>{1B8EA012-B26F-F601-110E-354E9AC82831}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\EventDrivenSystem\ListenersTypes\MultipleGameEventsListener.cs" />
     <Compile Include="Assets\Scripts\Image\SizechangeableImage.cs" />
     <Compile Include="Assets\Scripts\ShowCanvas\ImageChanger.cs" />
+    <Compile Include="Assets\Scripts\ShowCanvas\ImageController.cs" />
     <Compile Include="Assets\Scripts\Variables\Types\FloatVariable.cs" />
     <Compile Include="Assets\Scripts\VideoSystem\VideoPlayerController.cs" />
     <Compile Include="Assets\Scripts\VideoSystem\VideoScreenActivator.cs" />
@@ -103,16 +104,16 @@
     <None Include="Assets\Vuforia\Shaders\Text3D.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>D:/Unity/Projects/ResumeProjects/ARResume - Copy/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>D:/Unity/Projects/ResumeProjects/ARResumeGit/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/Unity/Projects/ResumeProjects/ARResume - Copy/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Projects/ResumeProjects/ARResumeGit/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>D:/Unity/Projects/ResumeProjects/ARResume - Copy/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Projects/ResumeProjects/ARResumeGit/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/Unity/Projects/ResumeProjects/ARResume - Copy/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Unity/Projects/ResumeProjects/ARResumeGit/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.16f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -348,11 +349,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="VuforiaScripts.csproj">
-      <Project>{373CF0A8-0271-4FB3-C17B-25EBAE0476DA}</Project>
+      <Project>{5B5E8030-2539-E921-627F-331F08BA7CF2}</Project>
       <Name>VuforiaScripts</Name>
     </ProjectReference>
     <ProjectReference Include="VuforiaEditorScripts.csproj">
-      <Project>{DFD515E3-6BDA-6CFC-AA15-DADBF12339BD}</Project>
+      <Project>{1DA9BD90-8870-DC1E-3326-EBC50DDB27E7}</Project>
       <Name>VuforiaEditorScripts</Name>
     </ProjectReference>
   </ItemGroup>

@@ -4,7 +4,9 @@ using UnityEngine.Video;
 
 [RequireComponent(typeof(VideoPlayer))]
 public class VideoPlayerController : MonoBehaviour {
-    
+
+    #region VARIABLES
+
     [SerializeField]
     VideoClip[] videoClips;
     [SerializeField]
@@ -15,22 +17,46 @@ public class VideoPlayerController : MonoBehaviour {
 
     VideoPlayer videoPlayer;
 
+    bool showStop = false;
+
+    #endregion //VARIABLES
+
+    #region UNITY_MONOBEHAVIOUR_METHODS
+
     private void Awake()
     {
         videoPlayer = GetComponent<VideoPlayer>();
     }
 
+    #endregion //UNITY_MONOBEHAVIOUR_METHODS
 
-    public void PlayProjectVideoWrapper()
+    #region PUBLIC_METHODS
+
+    public void ListenForProjectVideoWrapper()
     {
-        StartCoroutine(PlayProjectVideoCoroutine());   
+        StartCoroutine(ListenForProjectVideoCoroutine());   
     }
 
-    IEnumerator PlayProjectVideoCoroutine()
+    public void CancelShow()
+    {
+        showStop = true;
+    }
+
+    #endregion // PUBLIC_METHODS
+
+    #region PRIVATE_METHODS
+
+    IEnumerator ListenForProjectVideoCoroutine()
     {
         float clipLength;
         for (int i = 0; i < videoClips.Length; i++)
         {
+            if (showStop)
+            {
+                showStop = false;
+                break;
+            }
+
             yield return new WaitForSeconds(videoIntervals[i].Value); 
 
             displayObject.SetActive(true);
@@ -47,10 +73,13 @@ public class VideoPlayerController : MonoBehaviour {
         displayObject.SetActive(false);
 
     }
-    private void PlayVideo(VideoClip clip)
+
+    void PlayVideo(VideoClip clip)
     {
         videoPlayer.clip = clip;
         videoPlayer.Play();
     }
+
+    #endregion // PRIVATE_METHODS
 
 }

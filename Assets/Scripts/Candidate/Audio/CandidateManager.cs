@@ -4,14 +4,20 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class CandidateManager : MonoBehaviour {
 
+    #region VARIABLES
+
     [Header("Audio")]
 
     [SerializeField]
     AudioClip[] audioClips;
+
     AudioSource source;
 
+
+    [Header("Video")]
+
     [SerializeField]
-    FloatVariable[] showMoments; // show something by hand
+    FloatVariable[] videoMoments; // show video with hand (animation only)
 
 
     [Header("Managed events")]
@@ -19,10 +25,18 @@ public class CandidateManager : MonoBehaviour {
     [SerializeField]
     GameEvent[] events;
 
+    #endregion // VARIABLES
+
+    #region UNITY_MONOBEHAVIOUR_METHODS
+
     void Awake()
     {
         source = GetComponent<AudioSource>();   
     }
+
+    #endregion // UNITY_MONOBEHAVIOUR_METHODS
+
+    #region PUBLIC_METHODS
 
     public void Intro()
     {
@@ -34,7 +48,7 @@ public class CandidateManager : MonoBehaviour {
     {
         PlayAudio(audioClips[1]);
         StartCoroutine(ListenToEnd(audioClips[1].length));
-        StartCoroutine(ShowOnMoments(showMoments)); 
+        StartCoroutine(ShowOnMoments(videoMoments)); 
     }
 
     public void PlaySkillsAudio()
@@ -49,15 +63,19 @@ public class CandidateManager : MonoBehaviour {
         StartCoroutine(ListenToEnd(audioClips[3].length));
     }
 
+    public void CancelAudio()
+    {
+        source.Stop();
+    }
+
+    #endregion // PUBLIC_METHODS
+
+    #region PRIVATE_METHODS
+    
     void PlayAudio(AudioClip clip)
     {
         source.clip = clip;
         source.Play();
-    }
-
-    public void CancelAudio()
-    {
-        source.Stop();
     }
 
     IEnumerator ListenToEnd(float clipLength)
@@ -74,5 +92,7 @@ public class CandidateManager : MonoBehaviour {
             events[1].Raise(); // show with hand
         }
     }
+
+    #endregion // PRIVATE_METHODS
 
 }

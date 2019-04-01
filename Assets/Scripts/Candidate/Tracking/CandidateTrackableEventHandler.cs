@@ -3,17 +3,14 @@ using Vuforia;
 
 public class CandidateTrackableEventHandler : DefaultTrackableEventHandler
 {
-    #region PRIVATE_MEMBER_VARIABLES
+    #region VARIABLES
+
+    [SerializeField]
+    GameEvent candidateFound;
 
     bool isFirstRecognition = true;
-
-    #endregion // PRIVATE_MEMBER_VARIABLES
-
-    #region PUBLIC_MEMBER_VARIABLES
-
-    public GameEvent candidateFound;
-
-    #endregion // PUBLIC_MEMBER_VARIABLES
+    
+    #endregion // VARIABLES
 
     #region PROTECTED_METHODS
 

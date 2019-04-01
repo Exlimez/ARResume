@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: PhotoshopLogo
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 642e618292901114d96150470058d04c, type: 3}
-  size: {x: 8, y: 3}
+  size: {x: 2, y: 0.6}

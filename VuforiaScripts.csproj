@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{373CF0A8-0271-4FB3-C17B-25EBAE0476DA}</ProjectGuid>
+    <ProjectGuid>{5B5E8030-2539-E921-627F-331F08BA7CF2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>VuforiaScripts</AssemblyName>

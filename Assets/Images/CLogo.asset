@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Name: CLogo
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: cf6b9421bed1b6d489ecda0af2848d24, type: 3}
-  size: {x: 6, y: 6}
+  size: {x: 1, y: 1}
