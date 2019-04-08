@@ -33,9 +33,6 @@ public class ImageController : MonoBehaviour {
 
     ImageChanger iChanger;
 
-
-    bool showStop = false;
-
     #endregion // VARIABLES
 
 
@@ -58,10 +55,6 @@ public class ImageController : MonoBehaviour {
         StartCoroutine(ListenForSkillsLogoCoroutine());
     }
 
-    public void CancelShow()
-    {
-        showStop = true; //not so simple (first module choosing)
-    }
 
     IEnumerator ListenForProjectLogoCoroutine()
     {
@@ -70,11 +63,6 @@ public class ImageController : MonoBehaviour {
 
         for (int i = 0; i < projectsImages.Length; i++)
         {
-            if (showStop)
-            {
-                showStop = false;
-                break;
-            }
 
             //yield return new WaitForSeconds(projectsIntervalTimes[i].Value); // try to inspect with profiler
             intervalWait = new WaitForSeconds(projectsIntervalTimes[i].Value);
@@ -99,11 +87,6 @@ public class ImageController : MonoBehaviour {
 
         for (int i = 0; i < skillsImages.Length; i++)
         {
-            if (showStop)
-            {
-                showStop = false;
-                break;
-            }
 
             //yield return new WaitForSeconds(skillsIntervalTimes[i].Value); // try to inspect with profiler
             intervalWait = new WaitForSeconds(skillsIntervalTimes[i].Value);

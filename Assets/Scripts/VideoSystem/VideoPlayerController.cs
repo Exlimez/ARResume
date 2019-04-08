@@ -17,8 +17,6 @@ public class VideoPlayerController : MonoBehaviour {
 
     VideoPlayer videoPlayer;
 
-    bool showStop = false;
-
     #endregion //VARIABLES
 
     #region UNITY_MONOBEHAVIOUR_METHODS
@@ -37,11 +35,6 @@ public class VideoPlayerController : MonoBehaviour {
         StartCoroutine(ListenForProjectVideoCoroutine());   
     }
 
-    public void CancelShow()
-    {
-        showStop = true;
-    }
-
     #endregion // PUBLIC_METHODS
 
     #region PRIVATE_METHODS
@@ -51,11 +44,6 @@ public class VideoPlayerController : MonoBehaviour {
         float clipLength;
         for (int i = 0; i < videoClips.Length; i++)
         {
-            if (showStop)
-            {
-                showStop = false;
-                break;
-            }
 
             yield return new WaitForSeconds(videoIntervals[i].Value); 
 

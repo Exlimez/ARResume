@@ -63,10 +63,6 @@ public class CandidateManager : MonoBehaviour {
         StartCoroutine(ListenToEnd(audioClips[3].length));
     }
 
-    public void CancelAudio()
-    {
-        source.Stop();
-    }
 
     #endregion // PUBLIC_METHODS
 
@@ -82,6 +78,7 @@ public class CandidateManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(clipLength);
         events[0].Raise(); //module Choosing
+        Debug.Log("CandManagerEvent");
     }
 
     IEnumerator ShowOnMoments(FloatVariable[] showMoments)
@@ -90,6 +87,7 @@ public class CandidateManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(time.Value);
             events[1].Raise(); // show with hand
+            Debug.Log("ShowEvent");
         }
     }
 
